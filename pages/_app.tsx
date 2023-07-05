@@ -8,16 +8,12 @@ import { getDefaultWallets, RainbowKitProvider, lightTheme } from '@rainbow-me/r
 import { configureChains, createClient, WagmiConfig, allChains } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
 import { ThemeProvider } from 'degen'
-import ERC721DropContractProvider from 'providers/ERC721DropProvider'
 import { ToastContainer } from 'react-toastify'
 
-const { chains, provider } = configureChains(
-  [allChains.find((chain) => chain.id.toString() === process.env.NEXT_PUBLIC_CHAIN_ID)],
-  [publicProvider()]
-)
+const { chains, provider } = configureChains([...allChains], [publicProvider()])
 
 const { connectors } = getDefaultWallets({
-  appName: process.env.NEXT_PUBLIC_TITLE,
+  appName: process.env.NEXT_PUBLIC_TITLE as string,
   chains,
 })
 
@@ -27,7 +23,7 @@ const wagmiClient = createClient({
   provider,
 })
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: any) {
   return (
     <ThemeProvider defaultMode="dark" defaultAccent="yellow">
       <WagmiConfig client={wagmiClient}>
