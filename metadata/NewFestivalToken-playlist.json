@@ -1,0 +1,73 @@
+{
+    "schemaVersion": "1",
+    "coverArtUrl": "https://nftstorage.link/ipfs/bafybeihsjwuivujj5t3e7jm5x4d7rauvg32slqlq6utdtmwaafaconzu5u",
+    "title": "New Festival Token",
+    "artist": "vol. 1",
+    "chain": "Polygon",
+    "contractAddress": "0xe21c011Fb50cd9888b1A32B2f4cEB22F933dD883",
+    "tokenId": "",
+    "tokenType": "ERC-721",
+    "hideBranding": true,
+    "items": [
+      {
+        "url": "https://nftstorage.link/ipfs/bafybeia4gjn2ckfvmzrxriymxkdvis55ky6v2lez7qcc26vetkwfgt2g4a/1 - FELLER FELLINI - MOTA.wav",
+        "kind": "audio",
+        "artist": "FELLER FELLINI",
+        "title": "MOTA"
+      },
+      {
+        "url": "https://nftstorage.link/ipfs/bafybeia4gjn2ckfvmzrxriymxkdvis55ky6v2lez7qcc26vetkwfgt2g4a/2 - ETC ETC - MONTE FUJI.wav",
+        "kind": "audio",
+        "artist": "ETC ETC",
+        "title": "MONTE FUJI"
+      },
+      {
+        "url": "https://nftstorage.link/ipfs/bafybeicdzqdcdkfw5wk3776zfaqppdzkoelrvkrkjkrvgo3xuzr2cjnuqq/3_PACHO_CANTIN_EL_VUELO_AZUL.wav",
+        "kind": "audio",
+        "artist": "PACHO CANTIN",
+        "title": "EL VUELO AZUL"
+      },
+      {
+        "url": "https://nftstorage.link/ipfs/bafybeia4gjn2ckfvmzrxriymxkdvis55ky6v2lez7qcc26vetkwfgt2g4a/4 - SERES DE ARENA - LA TRAMPA.wav",
+        "kind": "audio",
+        "artist": "SERES DE ARENA",
+        "title": "LA TRAMPA"
+      },
+      {
+        "url": "https://nftstorage.link/ipfs/bafybeia4gjn2ckfvmzrxriymxkdvis55ky6v2lez7qcc26vetkwfgt2g4a/5 - CURADO DE ESPANTO - POLVO.wav",
+        "kind": "audio",
+        "artist": "CURADO DE ESPANTO",
+        "title": "POLVO"
+      },
+      {
+        "url": "https://nftstorage.link/ipfs/bafybeia4gjn2ckfvmzrxriymxkdvis55ky6v2lez7qcc26vetkwfgt2g4a/6 - MAXI MEDIOTANO - DOMINGO.wav",
+        "kind": "audio",
+        "artist": "MAXI MEDIOTANO",
+        "title": "DOMINGO"
+      },
+      {
+        "url": "https://nftstorage.link/ipfs/bafybeia4gjn2ckfvmzrxriymxkdvis55ky6v2lez7qcc26vetkwfgt2g4a/7 - ALEJO ALARCON - ERA DE ACUARIO.wav",
+        "kind": "audio",
+        "artist": "ALEJO ALARCON",
+        "title": "ERA DE ACUARIO"
+      },
+      {
+        "url": "https://nftstorage.link/ipfs/bafybeicdzqdcdkfw5wk3776zfaqppdzkoelrvkrkjkrvgo3xuzr2cjnuqq/8_LA_RICALEWIS_ANTENA.wav",
+        "kind": "audio",
+        "artist": "LA RICALEWIS",
+        "title": "ANTENA"
+      },
+      {
+        "url": "https://nftstorage.link/ipfs/bafybeia4gjn2ckfvmzrxriymxkdvis55ky6v2lez7qcc26vetkwfgt2g4a/9 - OCTAVO COLOR - TEMA 1.wav",
+        "kind": "audio",
+        "artist": "OCTAVO COLOR",
+        "title": "TEMA 1"
+      },
+      {
+        "url": "https://nftstorage.link/ipfs/bafybeia4gjn2ckfvmzrxriymxkdvis55ky6v2lez7qcc26vetkwfgt2g4a/10 - VETERANOS DEL PANICO - ASILO.wav",
+        "kind": "audio",
+        "artist": "VETERANOS DEL PANICO",
+        "title": "ASILO"
+      }
+    ]
+  }
