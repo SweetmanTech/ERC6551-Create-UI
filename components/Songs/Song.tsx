@@ -11,7 +11,7 @@ const Song = ({ song }: any) => {
   const songAddress = song?.contract?.address
   const tokenId = song?.tokenId
   const { activeChain } = useNetwork()
-  const { create, getAccount } = useTokenbound()
+  const { create } = useTokenbound()
   const router = useRouter()
   const [loading, setLoading] = useState(false)
 
@@ -25,9 +25,6 @@ const Song = ({ song }: any) => {
     setLoading(true)
     let response = await create(songAddress, tokenId)
     if (response) {
-      console.log('SWEETS REGISTER TOKEN response', response)
-      response = await getAccount(songAddress, tokenId)
-      console.log('SWEETS getAccount response', response)
       successRedirect()
     }
     setLoading(false)

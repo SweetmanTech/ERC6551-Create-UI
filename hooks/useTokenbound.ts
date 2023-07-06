@@ -13,10 +13,7 @@ const useTokenbound = () => {
                 tokenContract: address,
                 tokenId,
             })) as any
-        
             const receipt = await preparedAccount.wait()
-        
-            console.log('SWEETS preparedAccount', receipt) //0x1a2...3b4cd
             return receipt
         } catch (err) {
             handleTxError(err)
@@ -24,19 +21,8 @@ const useTokenbound = () => {
         }
     }
 
-    const getAccount = async (address: string, tokenId: string) => {
-        const tokenBoundAccount = tokenboundClient.getAccount({
-            tokenContract: address,
-            tokenId: tokenId,
-        });
-        
-        console.log("SWEETS tokenBoundAccount", tokenBoundAccount); //0x1a2...3b4cd
-        return tokenBoundAccount
-    }
-
     return {
-        create,
-        getAccount
+        create
     }
 }
 
