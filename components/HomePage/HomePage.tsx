@@ -1,7 +1,10 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import Songs from '../Songs'
+import { useAccount } from 'wagmi'
 
 const HomePage = () => {
+  const { data: address } = useAccount()
+
   return (
     <div className="flex flex-col justify-center items-center h-[100vh] gap-11">
       <div className="font-body">Onchain Playlist</div>
@@ -10,7 +13,7 @@ const HomePage = () => {
         songs and interact with dApps across the Ethereum ecosystem.
       </div>
       <ConnectButton />
-      <Songs />
+      {address && <Songs />}
     </div>
   )
 }

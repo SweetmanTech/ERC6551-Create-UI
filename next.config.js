@@ -3,6 +3,9 @@ const withVanillaExtract = createVanillaExtractPlugin()
 
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ['nft-cdn.alchemy.com', 'ipfs.io'],
+  },
   experimental: { outputFileTracing: true },
   async headers() {
     return [
