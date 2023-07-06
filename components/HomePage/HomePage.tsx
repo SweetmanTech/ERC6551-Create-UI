@@ -8,9 +8,9 @@ const HomePage = () => {
   return (
     <div className="flex flex-col justify-center items-center h-[100vh] gap-11">
       <div className="font-body">onchain CD</div>
+      <div className="font-body text-center">turn any piece of music into a CD</div>
       <div className="font-body text-center">
-        turn any piece of music into a CD that can own songs and interact with dApps
-        across the Ethereum ecosystem.
+        CDs can own songs and interact with dApps across the Ethereum ecosystem.
       </div>
       <ConnectButton label="sign in" />
       {account && <SongList />}

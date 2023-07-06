@@ -3,13 +3,16 @@ import abi from '../../lib/abi/tokenbound-registry-abi.json'
 import { useNetwork, useSigner } from 'wagmi'
 import getIpfsLink from '@lib/getIpfsLink'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 const Song = ({ song }: any) => {
   const { data: signer } = useSigner()
   const { activeChain } = useNetwork()
   const imageSrc = getIpfsLink(song?.media?.[0]?.gateway)
+  const router = useRouter()
 
   const handleClick = async () => {
+    // TODO: abstract to useTokenbound hook.
     const contract = new Contract(
       '0x02101dfB77FDE026414827Fdc604ddAF224F0921',
       abi,
@@ -29,7 +32,10 @@ const Song = ({ song }: any) => {
       salt,
       initData
     )
-    const receipt = await tx.wait()
+    await tx.wait()
+    router.push(
+      `https://alpha.onchainplaylist.xyz/${chainId}/${tokenContract}/${tokenId}`
+    )
   }
 
   return (
