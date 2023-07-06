@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@adraffy/ens-normalize@1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@adraffy/ens-normalize/-/ens-normalize-1.9.0.tgz#223572538f6bea336750039bb43a4016dcc8182d"
-  integrity sha512-iowxq3U30sghZotgl4s/oJRci6WPBfNO5YYgk2cIOMCHr3LeGPcsZjCEr+33Q4N+oV3OABDAtA+pyvWjbvBifQ==
-
 "@assemblyscript/loader@^0.9.4":
   version "0.9.4"
   resolved "https://registry.npmjs.org/@assemblyscript/loader/-/loader-0.9.4.tgz"
@@ -1554,23 +1549,6 @@
   resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.1.6.tgz#a350caf42975e7197b24b495b8d764eec7e6a36e"
   integrity sha512-4ZEwiRuZEicXhXqmhw3+de8Z4EpOLQj/gp+D9fFWo6ii6W1kBkNNvvEx4A90ugppu+74pT1lIJnOuz3A9oQeJA==
 
-"@noble/curves@1.0.0", "@noble/curves@~1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@noble/curves/-/curves-1.0.0.tgz#e40be8c7daf088aaf291887cbc73f43464a92932"
-  integrity sha512-2upgEu0iLiDVDZkNLeFV2+ht0BAVgQnEmCk6JsOch9Rp8xfkMCbvbAZlA2pBHQc73dbl+vFOXfqkf4uemdn0bw==
-  dependencies:
-    "@noble/hashes" "1.3.0"
-
-"@noble/hashes@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.3.0.tgz#085fd70f6d7d9d109671090ccae1d3bec62554a1"
-  integrity sha512-ilHEACi9DwqJB0pw7kv+Apvh50jiiSyR/cQ3y4W7lOR5mhvn/50FLUfsnfJz0BDZtl/RR16kXvptiv6q1msYZg==
-
-"@noble/hashes@~1.3.0":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.3.1.tgz#8831ef002114670c603c458ab8b11328406953a9"
-  integrity sha512-EbqwksQwz9xDRGfDST86whPBgM65E0OH/pCgqW0GBVzO22bNE+NuIbeTb714+IfSjU3aRk47EUvXIb5bTsenKA==
-
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -2098,35 +2076,6 @@
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
 
-"@scure/base@~1.1.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@scure/base/-/base-1.1.1.tgz#ebb651ee52ff84f420097055f4bf46cfba403938"
-  integrity sha512-ZxOhsSyxYwLJj3pLZCefNitxsj093tb2vq90mp2txoYeBqbcjDjqFhyM8eUjq/uFm6zJ+mUuqxlS2FkuSY1MTA==
-
-"@scure/bip32@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@scure/bip32/-/bip32-1.3.0.tgz#6c8d980ef3f290987736acd0ee2e0f0d50068d87"
-  integrity sha512-bcKpo1oj54hGholplGLpqPHRbIsnbixFtc06nwuNM5/dwSXOq/AAYoIBRsBmnZJSdfeNW5rnff7NTAz3ZCqR9Q==
-  dependencies:
-    "@noble/curves" "~1.0.0"
-    "@noble/hashes" "~1.3.0"
-    "@scure/base" "~1.1.0"
-
-"@scure/bip39@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@scure/bip39/-/bip39-1.2.0.tgz#a207e2ef96de354de7d0002292ba1503538fc77b"
-  integrity sha512-SX/uKq52cuxm4YFXWFaVByaSHJh2w3BnokVSeUJVCv6K7WulT9u2BuNRBhuFl8vAuYnzx9bEu9WgpcNYTrYieg==
-  dependencies:
-    "@noble/hashes" "~1.3.0"
-    "@scure/base" "~1.1.0"
-
-"@tokenbound/sdk@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@tokenbound/sdk/-/sdk-0.3.0.tgz#6a6209ebe9f961003d30db5015160741975fe999"
-  integrity sha512-+C0vuFGQwhhpzI9cV2CocTDSpl0CNGmhPjhbss0RMZ7Rpt8ubZAAsm0cKPMLIbkkD8xyZB0UWVZuE6LfcEk3IQ==
-  dependencies:
-    viem "^1.0.7"
-
 "@types/bn.js@^4.11.3":
   version "4.11.6"
   resolved "https://registry.npmjs.org/@types/bn.js/-/bn.js-4.11.6.tgz"
@@ -2366,11 +2315,6 @@
     chalk "^4.1.1"
     debug "^4.3.1"
     loader-utils "^2.0.0"
-
-"@wagmi/chains@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@wagmi/chains/-/chains-1.2.0.tgz#d59eaa70ec51a5fdcd113975926992acfb17ab12"
-  integrity sha512-dmDRipsE54JfyudOBkuhEexqQWcrZqxn/qiujG8SBzMh/az/AH5xlJSA+j1CPWTx9+QofSMF3B7A4gb6XRmSaQ==
 
 "@wagmi/core@^0.3.7":
   version "0.3.7"
@@ -2636,11 +2580,6 @@
   version "0.9.0"
   resolved "https://registry.npmjs.org/@zxing/text-encoding/-/text-encoding-0.9.0.tgz"
   integrity sha512-U/4aVJ2mxI0aDNI8Uq0wEhMgY+u4CNtEb0om3+y3+niDAsoTCOB33UF0sxpzqzdqXLqmvc+vZyAt4O8pPdfkwA==
-
-abitype@0.8.11:
-  version "0.8.11"
-  resolved "https://registry.yarnpkg.com/abitype/-/abitype-0.8.11.tgz#66e1cf2cbf46f48d0e57132d7c1c392447536cc1"
-  integrity sha512-bM4v2dKvX08sZ9IU38IN5BKmN+ZkOSd2oI4a9f0ejHYZQYV6cDr7j+d95ga0z2XHG36Y4jzoG5Z7qDqxp7fi/A==
 
 abort-controller@^3.0.0:
   version "3.0.0"
@@ -5159,11 +5098,6 @@ iso-url@^1.1.5:
   resolved "https://registry.npmjs.org/iso-url/-/iso-url-1.2.1.tgz"
   integrity sha512-9JPDgCN4B7QPkLtYAAOrEuAWvP9rWvR5offAr0/SeF046wIkglqH3VXgYYP6NcsKslH80UIVgmPqNe3j7tG2ng==
 
-isomorphic-ws@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/isomorphic-ws/-/isomorphic-ws-5.0.0.tgz#e5529148912ecb9b451b46ed44d53dae1ce04bbf"
-  integrity sha512-muId7Zzn9ywDsyXgTIafTry2sV3nySZeUDe6YedVd1Hvuuep5AsIlqK+XefWpYTyJG5e503F2xIuT2lcU6rCSw==
-
 it-all@^1.0.4, it-all@^1.0.5:
   version "1.0.6"
   resolved "https://registry.npmjs.org/it-all/-/it-all-1.0.6.tgz"
@@ -7356,21 +7290,6 @@ varint@^6.0.0:
   resolved "https://registry.npmjs.org/varint/-/varint-6.0.0.tgz"
   integrity sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==
 
-viem@^1.0.7:
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/viem/-/viem-1.2.9.tgz#8ccf786cd00d28b14b644f2b9fe35fc6bf2bdc41"
-  integrity sha512-EnEbTuAAHv43unUgMISdQXbD9mrhZLvOdmf6eRGbDFl+XwP/PEzZAT79RaWAuDPnLXGMP1gBCJF++NFjSMukUw==
-  dependencies:
-    "@adraffy/ens-normalize" "1.9.0"
-    "@noble/curves" "1.0.0"
-    "@noble/hashes" "1.3.0"
-    "@scure/bip32" "1.3.0"
-    "@scure/bip39" "1.2.0"
-    "@wagmi/chains" "1.2.0"
-    abitype "0.8.11"
-    isomorphic-ws "5.0.0"
-    ws "8.12.0"
-
 wagmi@^0.4.9:
   version "0.4.10"
   resolved "https://registry.npmjs.org/wagmi/-/wagmi-0.4.10.tgz"
@@ -7506,11 +7425,6 @@ ws@7.5.3:
   version "7.5.3"
   resolved "https://registry.npmjs.org/ws/-/ws-7.5.3.tgz"
   integrity sha512-kQ/dHIzuLrS6Je9+uv81ueZomEwH0qVYstcAQ4/Z93K8zeko9gtAbttJWzoC5ukqXY1PpoouV3+VSOqEAFt5wg==
-
-ws@8.12.0:
-  version "8.12.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.12.0.tgz#485074cc392689da78e1828a9ff23585e06cddd8"
-  integrity sha512-kU62emKIdKVeEIOIKVegvqpXMSTAMLJozpHZaJNDYqBjzlSYXQGviYwN1osDLJ9av68qHd4a2oSjd7yD4pacig==
 
 ws@^7.4.0:
   version "7.5.7"
