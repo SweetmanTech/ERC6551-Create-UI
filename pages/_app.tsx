@@ -1,5 +1,4 @@
 import '@rainbow-me/rainbowkit/styles.css'
-import '@zoralabs/zord/index.css'
 import 'styles/global.css'
 import 'react-toastify/dist/ReactToastify.css'
 import 'degen/styles'

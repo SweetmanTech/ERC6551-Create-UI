@@ -20,14 +20,14 @@ const Songs = () => {
 
     if (!chainId || !address) return
     init()
-  }, [])
+  }, [chainId, address])
 
   return (
     <div>
       {hasSongs ? (
         <div>
           {songs.map((song: any) => (
-            <Song song={song} />
+            <Song song={song} key={song?.id} />
           ))}
         </div>
       ) : (
