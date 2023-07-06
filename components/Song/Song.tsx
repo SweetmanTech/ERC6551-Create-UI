@@ -1,41 +1,36 @@
 import { Contract } from 'ethers'
-import abi from '../../lib/abi/tokenbound-registry-abi.json'
 import { useNetwork, useSigner } from 'wagmi'
 import getIpfsLink from '@lib/getIpfsLink'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import useTokenbound from '../../hooks/useTokenbound'
+import { toast } from 'react-toastify'
 
 const Song = ({ song }: any) => {
-  const { data: signer } = useSigner()
-  const { activeChain } = useNetwork()
   const imageSrc = getIpfsLink(song?.media?.[0]?.gateway)
   const router = useRouter()
+  const { activeChain } = useNetwork()
+  const { createAccount, hasDeployedAccount } = useTokenbound()
+  const tokenId = song?.tokenId
+  const tokenContract = song?.contract?.address
+
+  const handleSuccess = () => {
+    toast.success('CD created! Opening...')
+    router.push(
+      `https://alpha.onchainplaylist.xyz/${activeChain?.id}/${tokenContract}/${tokenId}`
+    )
+  }
 
   const handleClick = async () => {
-    // TODO: abstract to useTokenbound hook.
-    const contract = new Contract(
-      '0x02101dfB77FDE026414827Fdc604ddAF224F0921',
-      abi,
-      signer
-    )
-    const implementation = '0x2D25602551487C3f3354dD80D76D54383A243358'
-    const chainId = activeChain?.id
-    const tokenContract = song?.contract?.address
-    const tokenId = song?.tokenId
-    const salt = 0
-    const initData = '0x8129fc1c'
-    const tx = await contract.createAccount(
-      implementation,
-      chainId,
-      tokenContract,
-      tokenId,
-      salt,
-      initData
-    )
-    await tx.wait()
-    router.push(
-      `https://alpha.onchainplaylist.xyz/${chainId}/${tokenContract}/${tokenId}`
-    )
+    const alreadyExists = await hasDeployedAccount(tokenContract, tokenId)
+    if (alreadyExists) {
+      handleSuccess()
+      return
+    }
+    const response = await createAccount(tokenContract, tokenId)
+    if (response) {
+      handleSuccess()
+    }
   }
 
   return (
