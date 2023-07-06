@@ -12,12 +12,9 @@ const Songs = () => {
   const chainId = activeChain?.id as any
   const address = account?.address as string
 
-  console.log('SWEETS network', activeChain)
-  console.log('SWEETS address', address)
   useEffect(() => {
     const init = async () => {
       const response = await getNfts(chainId, address)
-      console.log('SWEETS response', response)
       setSongs(response)
     }
 
