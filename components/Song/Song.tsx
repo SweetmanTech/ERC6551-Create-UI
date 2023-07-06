@@ -43,9 +43,10 @@ const Song = ({ song }: any) => {
       {imageSrc && (
         <Image
           src={getIpfsLink(song?.media?.[0]?.gateway)}
-          height={100}
-          width={100}
+          height={150}
+          width={150}
           alt="song"
+          className="rounded-xl"
         />
       )}
     </button>
