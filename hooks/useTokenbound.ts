@@ -4,15 +4,17 @@ import { useNetwork, useSigner } from "wagmi"
 import handleTxError from "../lib/handleTxError"
 import { useMemo } from "react"
 
+const REGISTRY_ADDRESS = "0x02101dfB77FDE026414827Fdc604ddAF224F0921"
+const IMPLEMENTATION_ADDRESS = "0x2D25602551487C3f3354dD80D76D54383A243358"
+
 const useTokenbound = () => {
     const { data: signer } = useSigner()
     const { activeChain } = useNetwork()
     const contract = useMemo(() => new Contract(
-        '0x02101dfB77FDE026414827Fdc604ddAF224F0921',
+        REGISTRY_ADDRESS,
         abi,
         signer
     ), [signer])
-    const implementation = '0x2D25602551487C3f3354dD80D76D54383A243358'
     const chainId = activeChain?.id
     const salt = 0
 
@@ -20,7 +22,7 @@ const useTokenbound = () => {
         try {
             const initData = '0x8129fc1c'
             const tx = await contract.createAccount(
-            implementation,
+            IMPLEMENTATION_ADDRESS,
             chainId,
             contractAddress,
             tokenId,
@@ -36,7 +38,7 @@ const useTokenbound = () => {
     }
 
     const getAccount = async (contractAddress, tokenId) => {
-        const account = await contract.account(implementation, chainId, contractAddress, tokenId, salt)
+        const account = await contract.account(IMPLEMENTATION_ADDRESS, chainId, contractAddress, tokenId, salt)
         return account
     }
 
