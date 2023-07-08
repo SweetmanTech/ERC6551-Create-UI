@@ -2,24 +2,31 @@ import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount } from 'wagmi'
 import SongList from '../SongList'
 import CustomConnectButton from '../CustomConnectButton'
+import Title from './Title'
+import Description from './Description'
+import { useAnimation } from 'framer-motion'
+import { useEffect } from 'react'
 
 const HomePage = () => {
   const { data: account } = useAccount()
+  const titleControls = useAnimation()
+  const descriptionControls = useAnimation()
+  const connectControls = useAnimation()
+
+  useEffect(() => {
+    const sequence = async () => {
+      await titleControls.start('show')
+      await descriptionControls.start('show')
+      await connectControls.start('show')
+    }
+    sequence()
+  }, [titleControls, descriptionControls, connectControls])
 
   return (
-    <div className="flex text-white flex-col justify-center items-center h-[100vh] gap-11 bg-black md:bg-[url('/images/landing_background_2.png')] bg-cover bg-center">
-      <div className="flex flex-col gap-3">
-        <div className="font-hanson text-5xl text-center">Create a CD with</div>
-        <div className="font-hanson text-5xl text-center">your Music NFTs</div>
-      </div>
-      <div>
-        <div className="font-body text-center">Turn any piece of music into a CD.</div>
-        <div className="font-body text-center">
-          CDs can own songs and interact with dApps
-        </div>
-        <div className="font-body text-center">across the Ethereum ecosystem.</div>
-      </div>
-      <CustomConnectButton />
+    <div className="md:pt-[200px] flex text-white flex-col justify-center items-center h-[100vh] gap-11 md:gap-[50px] bg-black md:bg-[url('/images/landing_background.png')] bg-cover bg-center">
+      <Title controls={titleControls} />
+      <Description controls={descriptionControls} />
+      <CustomConnectButton controls={connectControls} />
       {account && <SongList />}
     </div>
   )
