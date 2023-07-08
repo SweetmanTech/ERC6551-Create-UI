@@ -6,7 +6,7 @@ const Title = ({ controls }) => {
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.25 }, // Change this value as needed
+      transition: { duration: 0.25 },
     },
   }
 
