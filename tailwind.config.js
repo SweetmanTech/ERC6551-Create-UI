@@ -9,6 +9,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       body: ['"Cerebri Sans"', 'sans-serif'],
+      hanson: ['Hanson', 'serif'],
     },
   },
   plugins: [],

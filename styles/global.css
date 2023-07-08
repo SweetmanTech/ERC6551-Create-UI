@@ -38,3 +38,11 @@ button.xmint-btn:after {
 button.xmint-btn {
   background-color: #0f1bf8;
 }
+
+@font-face {
+  font-family: 'Hanson';
+  src: url('/fonts/hanson/Hanson-Bold.otf') format('opentype'), 
+       url('/fonts/hanson/Hanson-Bold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
