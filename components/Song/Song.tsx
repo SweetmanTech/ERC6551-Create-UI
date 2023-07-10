@@ -1,5 +1,4 @@
-import { Contract } from 'ethers'
-import { useNetwork, useSigner } from 'wagmi'
+import { useNetwork } from 'wagmi'
 import getIpfsLink from '@lib/getIpfsLink'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -34,19 +33,14 @@ const Song = ({ song }: any) => {
   }
 
   return (
-    <button
-      type="button"
-      onClick={handleClick}
-      className="flex flex-col justify-center items-center"
-    >
-      {song?.title}
+    <button type="button" onClick={handleClick}>
       {imageSrc && (
         <Image
           src={getIpfsLink(song?.media?.[0]?.gateway)}
-          height={150}
-          width={150}
+          height={300}
+          width={300}
           alt="song"
-          className="rounded-xl"
+          className="rounded-xl h-[300px] w-[300px] object-contain"
         />
       )}
     </button>

@@ -53,10 +53,7 @@ const SongList = () => {
       >
         {songs.map((song) => (
           <SwiperSlide key={song.title} className="flex justify-center items-center">
-            <img
-              className="h-[300px] w-[300px] object-contain"
-              src={song?.media?.[0]?.gateway}
-            />
+            <Song song={song} />
           </SwiperSlide>
         ))}
       </Swiper>

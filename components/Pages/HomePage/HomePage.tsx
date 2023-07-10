@@ -6,8 +6,8 @@ const HomePage = () => {
   const { data: account } = useAccount()
   console.log('SWEETS ACCOUNT', account)
 
-  return <>{account ? <CoverPage /> : <ConnectWalletPage />}</>
-  // return <CoverPage />
+  // return <>{account ? <CoverPage /> : <ConnectWalletPage />}</>
+  return <CoverPage />
 }
 
 export default HomePage

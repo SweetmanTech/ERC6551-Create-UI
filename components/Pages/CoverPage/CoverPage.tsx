@@ -7,10 +7,8 @@ const CoverPage = () => {
     document.documentElement.style.backgroundColor = '#ffffff'
   }, [])
 
-  console.log('SWEETS SONG LIST')
-
   return (
-    <div className="h-[100vh] z-1">
+    <div className="h-[100vh]">
       <SongList />
     </div>
   )
