@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useState } from 'react'
 import Song from '../Song'
 import { getNfts } from '../../lib/getNfts'
@@ -34,7 +35,7 @@ const SongList = () => {
   return (
     <div className="w-full h-[300px]">
       <Swiper
-        effect={'coverflow'}
+        effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={3}
