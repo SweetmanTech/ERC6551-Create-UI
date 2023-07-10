@@ -4,13 +4,15 @@ import Song from '../Song'
 import { getNfts } from '../../lib/getNfts'
 import { useAccount, useNetwork } from 'wagmi'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectCoverflow, Pagination } from 'swiper/modules'
+import { EffectCoverflow, Mousewheel, Pagination } from 'swiper/modules'
 import 'swiper/css/bundle' // import Swiper styles
+import PendingTxModal from '@components/PendingTxModal'
 
 const SongList = () => {
   const { activeChain } = useNetwork()
   const { data: account } = useAccount()
   const [songs, setSongs] = useState([] as any)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const init = async () => {
@@ -32,11 +34,17 @@ const SongList = () => {
     init()
   }, [activeChain, account])
 
+  const handleRegistering = () => {
+    console.log('SWEETS OPEN POPUP')
+    setOpen(true)
+  }
+
   return (
     <div className="w-full h-[300px]">
       <Swiper
         effect="coverflow"
         grabCursor={true}
+        mousewheel={true}
         centeredSlides={true}
         slidesPerView={3}
         spaceBetween={10}
@@ -48,15 +56,20 @@ const SongList = () => {
           slideShadows: false,
         }}
         pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[Mousewheel, EffectCoverflow, Pagination]}
         className="w-full h-full"
       >
         {songs.map((song) => (
           <SwiperSlide key={song.title} className="flex justify-center items-center">
-            <Song song={song} />
+            <Song
+              song={song}
+              onRegistering={handleRegistering}
+              onError={() => setOpen(false)}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
+      {open && <PendingTxModal />}
     </div>
   )
 }

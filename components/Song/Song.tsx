@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import useTokenbound from '../../hooks/useTokenbound'
 import { toast } from 'react-toastify'
 
-const Song = ({ song }: any) => {
+const Song = ({ song, onRegistering, onError }: any) => {
   const imageSrc = getIpfsLink(song?.media?.[0]?.gateway)
   const router = useRouter()
   const { activeChain } = useNetwork()
@@ -21,6 +21,7 @@ const Song = ({ song }: any) => {
   }
 
   const handleClick = async () => {
+    onRegistering?.()
     const alreadyExists = await hasDeployedAccount(tokenContract, tokenId)
     if (alreadyExists) {
       handleSuccess()
@@ -30,6 +31,7 @@ const Song = ({ song }: any) => {
     if (response) {
       handleSuccess()
     }
+    onError?.()
   }
 
   return (
@@ -40,6 +42,8 @@ const Song = ({ song }: any) => {
           height={300}
           width={300}
           alt="song"
+          placeholder="blur"
+          blurDataURL={getIpfsLink(song?.media?.[0]?.gateway)}
           className="rounded-xl h-[300px] w-[300px] object-contain"
         />
       )}

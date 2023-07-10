@@ -1,3 +1,4 @@
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 import SongList from '../../SongList'
 import { useEffect } from 'react'
 
@@ -9,6 +10,7 @@ const CoverPage = () => {
 
   return (
     <div className="h-[100vh]">
+      <ConnectButton />
       <SongList />
     </div>
   )
