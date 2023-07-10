@@ -22,8 +22,18 @@ const ConnectWalletPage = () => {
     sequence()
   }, [titleControls, descriptionControls, connectControls])
 
+  useEffect(() => {
+    document.body.style.backgroundImage = "url('/images/landing_background.png')"
+    document.documentElement.style.backgroundImage =
+      "url('/images/landing_background.png')"
+  }, [])
+
   return (
-    <div className="md:pt-[200px] flex text-white flex-col justify-center items-center h-[100vh] gap-11 md:gap-[50px] bg-black md:bg-[url('/images/landing_background.png')] bg-cover bg-center">
+    <div
+      className={`md:pt-[200px] flex text-white flex-col justify-center items-center h-[100vh] gap-11 md:gap-[50px] bg-black ${
+        !account && "md:bg-[url('/images/landing_background.png')]"
+      } bg-cover bg-center`}
+    >
       <Title controls={titleControls} />
       <Description controls={descriptionControls} />
       <CustomConnectButton controls={connectControls} />
