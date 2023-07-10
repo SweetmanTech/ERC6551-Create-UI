@@ -40,7 +40,7 @@ const SongList = () => {
   }
 
   return (
-    <div className="w-full h-[300px]">
+    <div className="w-full">
       <Swiper
         effect="coverflow"
         grabCursor={true}
@@ -55,7 +55,7 @@ const SongList = () => {
           modifier: 1,
           slideShadows: false,
         }}
-        pagination={true}
+        pagination={false}
         modules={[Mousewheel, EffectCoverflow, Pagination]}
         className="w-full h-full"
       >
