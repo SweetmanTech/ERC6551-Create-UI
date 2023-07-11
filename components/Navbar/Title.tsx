@@ -12,7 +12,7 @@ const Title = ({ controls }) => {
 
   return (
     <motion.div variants={variants} initial="hidden" animate={controls}>
-      <motion.div className="font-hanson text-lg text-center text-white">
+      <motion.div className="font-hanson text-lg md:text-3xl text-center text-white">
         onchain cd
       </motion.div>
     </motion.div>
