@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Title from './Title'
 import { useAnimation } from 'framer-motion'
 import Description from './Description'
+import Navbar from '@components/Navbar'
 
 const CoverPage = () => {
   const titleControls = useAnimation()
@@ -19,7 +20,7 @@ const CoverPage = () => {
 
   return (
     <div className="h-[100vh] bg-[url('/images/cover_background_mobile.png')] bg-cover bg-center bg-black">
-      <ConnectButton />
+      <Navbar />
       <div className="flex flex-col justify-center pt-11 pb-[100px] gap-5">
         <Title controls={titleControls} />
         <SongList />
