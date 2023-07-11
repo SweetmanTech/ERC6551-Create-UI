@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { useNetwork } from 'wagmi'
 import getIpfsLink from '@lib/getIpfsLink'
 import Image from 'next/image'
@@ -37,15 +38,17 @@ const Song = ({ song, onRegistering, onError }: any) => {
   return (
     <button type="button" onClick={handleClick}>
       {imageSrc && (
-        <Image
-          src={getIpfsLink(imageSrc)}
-          height={300}
-          width={300}
-          alt="song"
-          placeholder="blur"
-          blurDataURL={getIpfsLink(imageSrc)}
-          className="rounded-xl h-[300px] w-[300px] object-contain"
-        />
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Image
+            src={getIpfsLink(imageSrc)}
+            height={300}
+            width={300}
+            alt="song"
+            placeholder="blur"
+            blurDataURL={getIpfsLink(imageSrc)}
+            className="rounded-xl h-[300px] w-[300px] object-contain"
+          />
+        </motion.div>
       )}
     </button>
   )
