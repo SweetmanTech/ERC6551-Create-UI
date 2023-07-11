@@ -9,6 +9,7 @@ import useIsMobile from '@hooks/useIsMobile'
 import Spinner from '@components/Spinner'
 import { motion, AnimatePresence } from 'framer-motion'
 import 'swiper/css/bundle' // import Swiper styles
+import getUniqueSongList from '@lib/getUniqueSongList'
 
 const SongList = () => {
   const { activeChain } = useNetwork()
@@ -20,15 +21,7 @@ const SongList = () => {
   useEffect(() => {
     const init = async () => {
       const response = await getNfts(activeChain?.id?.toString(), account.address)
-      const seen = new Set()
-      const result = response.filter((v) => {
-        const address = v.contract.address
-        if (!seen[address]) {
-          seen[address] = true
-          return true
-        }
-        return false
-      }, {})
+      const result = getUniqueSongList(response)
       setSongs(result)
     }
 
