@@ -43,6 +43,7 @@
     "react-prevent-outside-scroll": "^0.0.2",
     "react-toastify": "^9.0.8",
     "shorthash2": "^1.0.3",
+    "swiper": "^10.0.4",
     "tinycolor2": "^1.4.2",
     "wagmi": "^0.4.9"
   },

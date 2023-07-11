@@ -1,12 +1,11 @@
-import { Contract } from 'ethers'
-import { useNetwork, useSigner } from 'wagmi'
+import { useNetwork } from 'wagmi'
 import getIpfsLink from '@lib/getIpfsLink'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import useTokenbound from '../../hooks/useTokenbound'
 import { toast } from 'react-toastify'
 
-const Song = ({ song }: any) => {
+const Song = ({ song, onRegistering, onError }: any) => {
   const imageSrc = getIpfsLink(song?.media?.[0]?.gateway)
   const router = useRouter()
   const { activeChain } = useNetwork()
@@ -22,6 +21,7 @@ const Song = ({ song }: any) => {
   }
 
   const handleClick = async () => {
+    onRegistering?.()
     const alreadyExists = await hasDeployedAccount(tokenContract, tokenId)
     if (alreadyExists) {
       handleSuccess()
@@ -31,22 +31,20 @@ const Song = ({ song }: any) => {
     if (response) {
       handleSuccess()
     }
+    onError?.()
   }
 
   return (
-    <button
-      type="button"
-      onClick={handleClick}
-      className="flex flex-col justify-center items-center"
-    >
-      {song?.title}
+    <button type="button" onClick={handleClick}>
       {imageSrc && (
         <Image
           src={getIpfsLink(song?.media?.[0]?.gateway)}
-          height={150}
-          width={150}
+          height={300}
+          width={300}
           alt="song"
-          className="rounded-xl"
+          placeholder="blur"
+          blurDataURL={getIpfsLink(song?.media?.[0]?.gateway)}
+          className="rounded-xl h-[300px] w-[300px] object-contain"
         />
       )}
     </button>

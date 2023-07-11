@@ -8,11 +8,11 @@ html {
 
 html,
 body {
+  background-color: black;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: black;
 }
 
 a {
@@ -26,17 +26,6 @@ a:hover {
 
 * {
   box-sizing: border-box;
-}
-
-button.xmint-btn span {
-  display: none;
-}
-button.xmint-btn:after {
- content: "Comprar con Tarjeta de Credito";
- color: white; 
-}
-button.xmint-btn {
-  background-color: #0f1bf8;
 }
 
 @font-face {
