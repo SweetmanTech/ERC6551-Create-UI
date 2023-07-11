@@ -22,6 +22,7 @@ const SongList = () => {
     const init = async () => {
       const response = await getNfts(activeChain?.id?.toString(), account.address)
       const result = getUniqueSongList(response)
+      console.log('SWEETS MISSING', result)
       setSongs(result)
     }
 
