@@ -20,7 +20,6 @@ const CustomConnectButton = ({ label = 'Create CD', controls }: any) => {
         }) => {
           const ready = mounted
           const connected = ready && account && chain
-          console.log('SWEETS account', account)
           return (
             <div
               {...(!ready && {
