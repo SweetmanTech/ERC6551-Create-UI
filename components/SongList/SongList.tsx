@@ -43,6 +43,7 @@ const SongList = () => {
 
   return (
     <div className="w-full flex justify-center">
+      {/* @ts-ignore */}
       <AnimatePresence exitBeforeEnter>
         {songs.length > 0 ? (
           <motion.div
@@ -54,6 +55,7 @@ const SongList = () => {
             className="w-full"
           >
             <Swiper
+              //  @ts-ignore
               effect="coverflow"
               grabCursor={true}
               mousewheel={true}
