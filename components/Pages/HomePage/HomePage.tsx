@@ -1,4 +1,4 @@
-import { useAccount, useSigner } from 'wagmi'
+import { useSigner } from 'wagmi'
 import CoverPage from '../CoverPage'
 import ConnectWalletPage from '../ConnectWalletPage'
 

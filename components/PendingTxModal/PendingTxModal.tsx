@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import Image from 'next/image'
+import Spinner from '../Spinner'
 
 interface PendingTransactionModalProps {
-  title: string
+  title?: string
 }
 
 const PendingTransactionModal: FC<PendingTransactionModalProps> = ({
@@ -30,13 +30,7 @@ const PendingTransactionModal: FC<PendingTransactionModalProps> = ({
       <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
         <div>
           <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-            <Image
-              className="h-5 w-5 text-green-600"
-              src="/images/spinner.gif"
-              alt="Spinner"
-              width={50}
-              height={50}
-            />
+            <Spinner />
           </div>
           <div className="mt-3 text-center sm:mt-5">
             <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-title">
