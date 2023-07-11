@@ -1,4 +1,3 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount } from 'wagmi'
 import SongList from '../../SongList'
 import CustomConnectButton from '../../CustomConnectButton'
@@ -21,12 +20,6 @@ const ConnectWalletPage = () => {
     }
     sequence()
   }, [titleControls, descriptionControls, connectControls])
-
-  useEffect(() => {
-    document.body.style.backgroundImage = "url('/images/landing_background.png')"
-    document.documentElement.style.backgroundImage =
-      "url('/images/landing_background.png')"
-  }, [])
 
   return (
     <div
