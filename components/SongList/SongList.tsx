@@ -29,11 +29,6 @@ const SongList = () => {
     init()
   }, [activeChain, account])
 
-  const handleRegistering = () => {
-    console.log('SWEETS OPEN POPUP')
-    setOpen(true)
-  }
-
   return (
     <div className="w-full flex justify-center">
       {/* @ts-ignore */}
@@ -69,7 +64,7 @@ const SongList = () => {
                 <SwiperSlide key={song.title}>
                   <Song
                     song={song}
-                    onRegistering={handleRegistering}
+                    onRegistering={() => setOpen(true)}
                     onError={() => setOpen(false)}
                   />
                 </SwiperSlide>
