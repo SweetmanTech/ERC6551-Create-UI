@@ -1,19 +1,19 @@
-import { Contract } from 'ethers'
-import { useNetwork, useSigner } from 'wagmi'
+import { motion } from 'framer-motion'
+import { useNetwork } from 'wagmi'
 import getIpfsLink from '@lib/getIpfsLink'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import useTokenbound from '../../hooks/useTokenbound'
 import { toast } from 'react-toastify'
+import getImageSrc from '@lib/getImageSrc'
 
-const Song = ({ song }: any) => {
-  const imageSrc = getIpfsLink(song?.media?.[0]?.gateway)
+const Song = ({ song, onRegistering, onError }: any) => {
   const router = useRouter()
   const { activeChain } = useNetwork()
   const { createAccount, hasDeployedAccount } = useTokenbound()
   const tokenId = song?.tokenId
   const tokenContract = song?.contract?.address
-
+  const imageSrc = getImageSrc(song)
   const handleSuccess = () => {
     toast.success('CD created! Opening...')
     router.push(
@@ -22,6 +22,7 @@ const Song = ({ song }: any) => {
   }
 
   const handleClick = async () => {
+    onRegistering?.()
     const alreadyExists = await hasDeployedAccount(tokenContract, tokenId)
     if (alreadyExists) {
       handleSuccess()
@@ -31,23 +32,23 @@ const Song = ({ song }: any) => {
     if (response) {
       handleSuccess()
     }
+    onError?.()
   }
 
   return (
-    <button
-      type="button"
-      onClick={handleClick}
-      className="flex flex-col justify-center items-center"
-    >
-      {song?.title}
+    <button type="button" onClick={handleClick}>
       {imageSrc && (
-        <Image
-          src={getIpfsLink(song?.media?.[0]?.gateway)}
-          height={150}
-          width={150}
-          alt="song"
-          className="rounded-xl"
-        />
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Image
+            src={getIpfsLink(imageSrc)}
+            height={300}
+            width={300}
+            alt="song"
+            placeholder="blur"
+            blurDataURL={getIpfsLink(imageSrc)}
+            className="rounded-xl h-[300px] w-[300px] object-contain"
+          />
+        </motion.div>
       )}
     </button>
   )

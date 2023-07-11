@@ -3,14 +3,20 @@ import '@zoralabs/zord/index.css'
 import 'styles/global.css'
 import 'react-toastify/dist/ReactToastify.css'
 import 'degen/styles'
+import 'swiper/css'
+import 'swiper/css/effect-coverflow'
+import 'swiper/css/pagination'
 
 import { getDefaultWallets, RainbowKitProvider, lightTheme } from '@rainbow-me/rainbowkit'
-import { configureChains, createClient, WagmiConfig, allChains } from 'wagmi'
+import { configureChains, createClient, WagmiConfig, chain } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
 import { ThemeProvider } from 'degen'
 import { ToastContainer } from 'react-toastify'
 
-const { chains, provider } = configureChains([...allChains], [publicProvider()])
+const { chains, provider } = configureChains(
+  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
+  [publicProvider()]
+)
 
 const { connectors } = getDefaultWallets({
   appName: process.env.NEXT_PUBLIC_TITLE as string,
