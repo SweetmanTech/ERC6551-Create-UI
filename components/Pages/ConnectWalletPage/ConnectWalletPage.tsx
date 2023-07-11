@@ -5,6 +5,7 @@ import Title from './Title'
 import Description from './Description'
 import { useAnimation } from 'framer-motion'
 import { useEffect } from 'react'
+import Navbar from '@components/Navbar'
 
 const ConnectWalletPage = () => {
   const { data: account } = useAccount()
@@ -22,15 +23,16 @@ const ConnectWalletPage = () => {
   }, [titleControls, descriptionControls, connectControls])
 
   return (
-    <div
-      className={`md:pt-[200px] flex text-white flex-col justify-center items-center h-[100vh] gap-11 md:gap-[50px] bg-black ${
-        !account && "md:bg-[url('/images/landing_background.png')]"
-      } bg-cover bg-center`}
-    >
-      <Title controls={titleControls} />
-      <Description controls={descriptionControls} />
-      <CustomConnectButton controls={connectControls} />
-      {account && <SongList />}
+    <div className="md:bg-[url('/images/landing_background.png')] bg-black bg-cover bg-center h-[100vh]">
+      <Navbar />
+      <div
+        className={`md:pt-[175px] flex text-white flex-col justify-center items-center gap-11 md:gap-[50px] `}
+      >
+        <Title controls={titleControls} />
+        <Description controls={descriptionControls} />
+        <CustomConnectButton controls={connectControls} />
+        {account && <SongList />}
+      </div>
     </div>
   )
 }
