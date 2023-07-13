@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
-const CustomConnectButton = ({ label = 'Create CD', controls }: any) => {
+const CustomConnectButton = ({ label = 'Create CD', controls, className }: any) => {
   const variants = {
     hidden: { opacity: 0, y: 10 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   }
+  const mobileSize = '110px'
+  const desktopSize = '200px'
 
   return (
-    <motion.div variants={variants} initial="hidden" animate="show">
+    <motion.div variants={variants} initial="hidden" animate="show" className={className}>
       <ConnectButton.Custom>
         {({
           account,
@@ -37,7 +39,7 @@ const CustomConnectButton = ({ label = 'Create CD', controls }: any) => {
                     <motion.button
                       onClick={openConnectModal}
                       type="button"
-                      className="border border-white rounded-3xl w-[200px] h-11 md:h-[200px]"
+                      className={`border border-white rounded-3xl w-[${mobileSize}] md:w-[${desktopSize}] h-[${mobileSize}] md:h-[${desktopSize}]`}
                       variants={variants}
                       initial="hidden"
                       animate={controls}
