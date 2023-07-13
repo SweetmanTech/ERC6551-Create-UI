@@ -27,7 +27,7 @@ const ConnectWalletPage = () => {
       <div
         className={`pt-[75px] md:pt-[175px] flex text-white flex-col justify-center items-center gap-4 md:gap-11 md:gap-[50px] `}
       >
-        <Title controls={titleControls} className="" />
+        <Title controls={titleControls} />
         <Description
           controls={descriptionControls}
           className="order-last md:order-none"

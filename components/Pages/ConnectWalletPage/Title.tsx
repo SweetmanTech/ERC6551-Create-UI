@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-const Title = ({ controls, className }) => {
+const Title = ({ controls }) => {
   const variants = {
     hidden: { opacity: 0, y: 10 },
     show: {
@@ -12,7 +12,7 @@ const Title = ({ controls, className }) => {
 
   return (
     <motion.div
-      className={`flex flex-col gap-3 font-hanson text-md md:text-5xl text-center ${className}`}
+      className="flex flex-col gap-3 font-hanson text-md md:text-5xl text-center"
       variants={variants}
       initial="hidden"
       animate={controls}
