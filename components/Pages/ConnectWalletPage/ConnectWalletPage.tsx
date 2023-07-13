@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import CustomConnectButton from '../../CustomConnectButton'
 import Title from './Title'
 import Description from './Description'
@@ -7,7 +6,6 @@ import { useEffect } from 'react'
 import Navbar from '@components/Navbar'
 
 const ConnectWalletPage = () => {
-  const { data: account } = useAccount()
   const titleControls = useAnimation()
   const descriptionControls = useAnimation()
   const connectControls = useAnimation()
