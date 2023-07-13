@@ -8,7 +8,7 @@ const Description = ({ controls, className }) => {
 
   return (
     <motion.div
-      className={`flex flex-col gap-3 text-xs text-[#898CA9] md:font-body text-center ${className}`}
+      className={`flex flex-col gap-3 text-xs md:text-lg text-[#898CA9] md:font-body text-center ${className}`}
       variants={variants}
       initial="hidden"
       animate={controls}

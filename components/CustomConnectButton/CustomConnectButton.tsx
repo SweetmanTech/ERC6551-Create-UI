@@ -6,8 +6,6 @@ const CustomConnectButton = ({ label = 'Create CD', controls, className }: any) 
     hidden: { opacity: 0, y: 10 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   }
-  const mobileSize = '110px'
-  const desktopSize = '200px'
 
   return (
     <motion.div variants={variants} initial="hidden" animate="show" className={className}>
@@ -39,7 +37,7 @@ const CustomConnectButton = ({ label = 'Create CD', controls, className }: any) 
                     <motion.button
                       onClick={openConnectModal}
                       type="button"
-                      className={`border border-white rounded-3xl w-[${mobileSize}] md:w-[${desktopSize}] h-[${mobileSize}] md:h-[${desktopSize}]`}
+                      className={`border border-white rounded-3xl w-[110px] md:w-[200px] h-[110px] md:h-[200px]`}
                       variants={variants}
                       initial="hidden"
                       animate={controls}
