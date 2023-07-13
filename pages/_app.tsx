@@ -8,31 +8,33 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 
 import { getDefaultWallets, RainbowKitProvider, lightTheme } from '@rainbow-me/rainbowkit'
-import { configureChains, createClient, WagmiConfig, chain } from 'wagmi'
+import { configureChains, createConfig, WagmiConfig, mainnet } from 'wagmi'
+import { polygon, optimism, arbitrum } from 'wagmi/chains'
 import { publicProvider } from 'wagmi/providers/public'
 import { ThemeProvider } from 'degen'
 import { ToastContainer } from 'react-toastify'
 
-const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
+const { chains, publicClient } = configureChains(
+  [mainnet, polygon, optimism, arbitrum],
   [publicProvider()]
 )
 
 const { connectors } = getDefaultWallets({
   appName: process.env.NEXT_PUBLIC_TITLE as string,
+  projectId: 'YOUR_PROJECT_ID',
   chains,
 })
 
-const wagmiClient = createClient({
+const wagmiConfig = createConfig({
   autoConnect: true,
   connectors,
-  provider,
+  publicClient,
 })
 
 function App({ Component, pageProps }: any) {
   return (
     <ThemeProvider defaultMode="dark" defaultAccent="yellow">
-      <WagmiConfig client={wagmiClient}>
+      <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider
           chains={chains}
           theme={lightTheme({

@@ -7,6 +7,10 @@ const nextConfig = {
   images: {
     domains: ['nftstorage.link', 'nft-cdn.alchemy.com', 'ipfs.io'],
   },
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false, net: false, tls: false }
+    return config
+  },
   async headers() {
     return [
       {

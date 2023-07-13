@@ -9,7 +9,7 @@ import getImageSrc from '@lib/getImageSrc'
 
 const Song = ({ song, onRegistering, onError }: any) => {
   const router = useRouter()
-  const { activeChain } = useNetwork()
+  const { chain: activeChain } = useNetwork()
   const { createAccount, hasDeployedAccount } = useTokenbound()
   const tokenId = song?.tokenId
   const tokenContract = song?.contract?.address

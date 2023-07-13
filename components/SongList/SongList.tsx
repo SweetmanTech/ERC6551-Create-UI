@@ -12,15 +12,15 @@ import 'swiper/css/bundle' // import Swiper styles
 import getUniqueSongList from '@lib/getUniqueSongList'
 
 const SongList = ({ className }: any) => {
-  const { activeChain } = useNetwork()
-  const { data: account } = useAccount()
+  const { chain: activeChain } = useNetwork()
+  const { address: account } = useAccount()
   const [songs, setSongs] = useState([] as any)
   const [open, setOpen] = useState(false)
   const { isMobile } = useIsMobile()
 
   useEffect(() => {
     const init = async () => {
-      const response = await getNfts(activeChain?.id?.toString(), account.address)
+      const response = await getNfts(activeChain?.id?.toString(), account)
       const result = getUniqueSongList(response)
       setSongs(result)
     }
