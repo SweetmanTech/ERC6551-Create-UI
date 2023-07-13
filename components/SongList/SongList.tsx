@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import 'swiper/css/bundle' // import Swiper styles
 import getUniqueSongList from '@lib/getUniqueSongList'
 
-const SongList = () => {
+const SongList = ({ className }: any) => {
   const { activeChain } = useNetwork()
   const { data: account } = useAccount()
   const [songs, setSongs] = useState([] as any)
@@ -30,7 +30,7 @@ const SongList = () => {
   }, [activeChain, account])
 
   return (
-    <div className="w-full flex justify-center">
+    <div className={`w-full flex justify-center ${className}`}>
       {/* @ts-ignore */}
       <AnimatePresence exitBeforeEnter>
         {songs.length > 0 ? (

@@ -19,13 +19,16 @@ const CoverPage = () => {
   }, [titleControls, descriptionControls])
 
   return (
-    <div className="h-[100vh] bg-[url('/images/cover_background_mobile.png')] bg-cover bg-center bg-black">
+    <div className="h-[100vh] bg-[url('/images/cover_background_mobile.png')] md:bg-[url('/images/cover_background.png')] bg-cover bg-center bg-black">
       <Navbar />
-      <div className="flex flex-col justify-center pt-11 pb-[100px] gap-5">
+      <div className="flex flex-col justify-center pt-[50px] md:pt-[100px] pb-[100px] gap-12 md:gap-5">
         <Title controls={titleControls} />
-        <SongList />
+        <SongList className="md:order-last" />
+        <Description
+          controls={descriptionControls}
+          className="order-last md:order-none"
+        />
       </div>
-      <Description controls={descriptionControls} />
     </div>
   )
 }
