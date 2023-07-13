@@ -12,17 +12,13 @@ const Title = ({ controls }) => {
 
   return (
     <motion.div
-      className="flex flex-col gap-3"
+      className="flex flex-col gap-3 font-hanson text-md md:text-5xl text-center"
       variants={variants}
       initial="hidden"
       animate={controls}
     >
-      <motion.div className="font-hanson text-5xl text-center">
-        Create a CD with
-      </motion.div>
-      <motion.div className="font-hanson text-5xl text-center">
-        your Music NFTs
-      </motion.div>
+      <motion.div>Create a CD with</motion.div>
+      <motion.div>your Music NFTs</motion.div>
     </motion.div>
   )
 }

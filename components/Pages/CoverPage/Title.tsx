@@ -12,13 +12,13 @@ const Title = ({ controls }) => {
 
   return (
     <motion.div
-      className="flex flex-col gap-3 text-white"
+      className="flex flex-col gap-1 md:gap-3 text-white font-hanson text-lg md:text-5xl text-center"
       variants={variants}
       initial="hidden"
       animate={controls}
     >
-      <motion.div className="font-hanson text-5xl text-center">Select your</motion.div>
-      <motion.div className="font-hanson text-5xl text-center">Main Record</motion.div>
+      <motion.div>Select your</motion.div>
+      <motion.div>Main Record</motion.div>
     </motion.div>
   )
 }

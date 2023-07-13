@@ -1,5 +1,4 @@
 import { useAccount } from 'wagmi'
-import SongList from '../../SongList'
 import CustomConnectButton from '../../CustomConnectButton'
 import Title from './Title'
 import Description from './Description'
@@ -23,15 +22,20 @@ const ConnectWalletPage = () => {
   }, [titleControls, descriptionControls, connectControls])
 
   return (
-    <div className="md:bg-[url('/images/landing_background.png')] bg-black bg-cover bg-center h-[100vh]">
+    <div className="bg-[url('/images/landing_background_mobile.png')] md:bg-[url('/images/landing_background.png')] bg-black bg-cover bg-center h-[100vh]">
       <Navbar />
       <div
-        className={`md:pt-[175px] flex text-white flex-col justify-center items-center gap-11 md:gap-[50px] `}
+        className={`pt-[75px] md:pt-[175px] flex text-white flex-col justify-center items-center gap-4 md:gap-11 md:gap-[50px] `}
       >
         <Title controls={titleControls} />
-        <Description controls={descriptionControls} />
-        <CustomConnectButton controls={connectControls} />
-        {account && <SongList />}
+        <Description
+          controls={descriptionControls}
+          className="order-last md:order-none"
+        />
+        <CustomConnectButton
+          controls={connectControls}
+          className="order-first md:order-last"
+        />
       </div>
     </div>
   )
