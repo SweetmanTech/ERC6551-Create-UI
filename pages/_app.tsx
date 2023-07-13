@@ -21,7 +21,7 @@ const { chains, publicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: process.env.NEXT_PUBLIC_TITLE as string,
-  projectId: 'YOUR_PROJECT_ID',
+  projectId: 'a6676072588b84bf974194c6d23f118f',
   chains,
 })
 
